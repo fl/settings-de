@@ -1,8 +1,12 @@
 Windows Services for Linux (WSL)
 ================================
 
-Activate a proxy in a WSL instance
-----------------------------------
+Mit Hilde der Windows-Erweiterung `Windows Services for Linux (WSL)` betreibt man auf Windows eine Linux Virtual Machine, die eng mit dem Gastbetriebssystem Windows verzahnt ist. Der Zugriff auf das Dateisystem des jeweiligen Gegenübers, also von Windows nach WSL/Linux oder umgekehrt, ist ohne Konfiguration möglich.
+
+Ausserdem kann man viele Entwicklerwerkzeuge so konfigurieren, dass sie WSL verwenden und damit Linux-Werkzeuge direkt auf Linux nutzen, ohne die EInschränkungen mit denen man leben lernt wenn man Windows als Entwicklermaschine benutzt und Linux als Zielplattform.
+
+Lokalen Proxy in einer WSL instanz aktivieren
+---------------------------------------------
 
 install the ``cntlm`` package
 
@@ -16,13 +20,13 @@ create password hashes for your credentials::
 
 configure hashes, port, exclusions in the config file ``/etc/cntlm.conf``
 
-Configure the Linux instance in WSL to use a proxy
------------------------------------------------------
+Linux in WSL zur Verwendung des likalen Proxys einrichten
+---------------------------------------------------------
 
 To use the local ``cntlm`` proxy installed in the previous step, use the settings for the proxy host and port as displayed in the examples here. To use a different proxy, adapt hostname and port. You can look up the currently configured proxy settings in the Windows system settings item "Proxy settings".
 
-Shell environment
-^^^^^^^^^^^^^^^^^
+In der Shell
+^^^^^^^^^^^^
 
 create the file ``/etc/profile.d/proxy.sh`` with the following content::
 
@@ -30,7 +34,7 @@ create the file ``/etc/profile.d/proxy.sh`` with the following content::
     http_proxy="http://localhost:3128"; export http_proxy
     https_proxy="$http_proxy"; export https_proxy
 
-APT configuration
+APT Konfiguration
 ^^^^^^^^^^^^^^^^^
 
 create the file ``/etc/apt/apt.conf.d/80proxy`` with the following content::
@@ -39,8 +43,8 @@ create the file ``/etc/apt/apt.conf.d/80proxy`` with the following content::
     Acquire::http::Proxy "http://localhost:3128";
     Acquire::https::Proxy "http://localhost:3128";
 
-Trusting a MITM proxy
----------------------
+Setup für einen MITM proxy
+--------------------------
 
 Some environments mandate that users submit to having their traffic inspected at the proxy, including TLS traffic. To achieve that, those sites usually configure their proxy to act as a CA to the internal client, and as a normal SSL client to servers offering the requested service on the public internet. For this configuration to work without user interaction (with the exception of server using HSTS), administrators deploy the CA certificate of the proxy to the trust chain of managed clients. On  a Windows machine, it will be visible in the Certificates MMC snap-in (the tool can be started as ``C:\Windows\System32\certmgr.msc``) in the folder "Trusted Root Certificates".
 
