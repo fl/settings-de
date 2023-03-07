@@ -1,7 +1,7 @@
 Windows Services for Linux (WSL)
 ================================
 
-Mit Hilde der Windows-Erweiterung `Windows Services for Linux (WSL)` betreibt man auf Windows eine Linux Virtual Machine, die eng mit dem Gastbetriebssystem Windows verzahnt ist. Der Zugriff auf das Dateisystem des jeweiligen Gegenübers, also von Windows nach WSL/Linux oder umgekehrt, ist ohne Konfiguration möglich.
+Mit Hilfe der Windows-Erweiterung `Windows Services for Linux (WSL)` betreibt man auf Windows eine Linux Virtual Machine, die eng mit dem Gastbetriebssystem Windows verzahnt ist. Der Zugriff auf das Dateisystem des jeweiligen Gegenübers, also von Windows nach WSL/Linux oder umgekehrt, ist ohne Konfiguration möglich.
 
 Ausserdem kann man viele Entwicklerwerkzeuge so konfigurieren, dass sie WSL verwenden und damit Linux-Werkzeuge direkt auf Linux nutzen, ohne die EInschränkungen mit denen man leben lernt wenn man Windows als Entwicklermaschine benutzt und Linux als Zielplattform.
 

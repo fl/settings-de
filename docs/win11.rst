@@ -4,7 +4,7 @@ Windows 11
 Sphinx installieren
 -------------------
 
-Di€`Sphinx` um die es hier geht stellt keine Rätsel, sondern liefert Antworten. Es handelt sich um das Python-Modul Sphinx, das man mit dem Python-Werkzeug ``pip`` installieren kann. Mit Hilfe von Sphinx erzeugt man aus Text-Dateien Dokumente oder ganze Dokumentsammlungenin verschiedenen Formaten wie z.B. HTML, oder PDF.
+Die `Sphinx` um die es hier geht stellt keine Rätsel, sondern liefert Antworten. Es handelt sich um das Python-Modul Sphinx, das man mit dem Python-Werkzeug ``pip`` installieren kann. Mit Hilfe von Sphinx erzeugt man aus Text-Dateien Dokumente oder ganze Dokumentsammlungenin verschiedenen Formaten wie z.B. HTML, oder PDF.
 
 ::
 
